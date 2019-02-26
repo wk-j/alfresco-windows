@@ -1,0 +1,26 @@
+// Alfresco 6.1
+http --form --auth admin:admin
+  POST http://192.168.0.130:8082/alfresco/api/-default-/public/alfresco/versions/1/nodes/-root-/children
+  fileData@./README.md
+  relativePath="x/y/z"
+  autoRename=false
+  overwrite=true
+  cm\\:title="Title TT"
+  cm\\:description="Description TT"
+  cm\\:author=HTTPie
+  comment=Comment
+  name="README.md"
+
+// Alfresco 5.2
+http --form --auth admin:admin
+  POST http://localhost:8090/alfresco/api/-default-/public/alfresco/versions/1/nodes/-root-/children
+  fileData@./README.md
+  relativePath="x/y/z"
+  autoRename=false
+  overwrite=true
+  majorVersion=true
+  cm\\:title="Title"
+  cm\\:description="Description"
+  cm\\:author="HTTPie"
+  comment="Comment"
+  name="README.md"
