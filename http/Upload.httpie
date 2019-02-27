@@ -5,8 +5,8 @@ http --form --auth admin:admin
   relativePath="x/y/z"
   autoRename=false
   overwrite=true
-  cm\\:title="Title TT"
-  cm\\:description="Description TT"
+  cm\\:title="Title"
+  cm\\:description="Description"
   cm\\:author=HTTPie
   comment=Comment
   name="README.md"
