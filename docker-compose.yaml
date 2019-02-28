@@ -1,13 +1,25 @@
 version: "3"
 
+volumes:
+    alfresco-data: 
+        driver: local
+        # driver_opts: 
+        #     type: none 
+        #     device: c:/alfresco/alfresco-data
+        #     o: bind
+    postgresql-data:
+        driver: local
+        # driver_opts: 
+        #     type: none 
+        #     device: c:/alfresco/postgresql-data
+        #     o: bind
+
 services:
-    volumes:
-        - tomcat-alf_date:
-        - postgresql-date:
+
     alfresco:
         image: alfresco/alfresco-content-repository-community:6.1.0-ea
         volumes:
-          - "tomcat-alf_date:/usr/local/tomcat/alf_data"
+          - "alfresco-data:/usr/local/tomcat/alf_data"
         environment:
             JAVA_OPTS : "
                 -Ddb.driver=org.postgresql.Driver
