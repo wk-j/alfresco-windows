@@ -1,10 +1,13 @@
 version: "3"
 
 services:
+    volumes:
+        - tomcat-alf_date:
+        - postgresql-date:
     alfresco:
         image: alfresco/alfresco-content-repository-community:6.1.0-ea
         volumes:
-          - "c:/alfresco/tomcat-alf_date:/usr/local/tomcat/alf_data"
+          - "tomcat-alf_date:/usr/local/tomcat/alf_data"
         environment:
             JAVA_OPTS : "
                 -Ddb.driver=org.postgresql.Driver
@@ -34,7 +37,7 @@ services:
     postgres:
         image: postgres:10.1
         volumes:
-          - "c:/alfresco/postgresql-data:/var/lib/postgresql/data"
+          - "postgresql-data:/var/lib/postgresql/data"
         environment:
             - POSTGRES_PASSWORD=alfresco
             - POSTGRES_USER=alfresco
