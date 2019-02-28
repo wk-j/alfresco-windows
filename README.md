@@ -5,7 +5,7 @@ docker-compose down
 docker-compose up
 ```
 
-### Volume
+## Volume
 
 ```
 docker volume create alfresco-data
