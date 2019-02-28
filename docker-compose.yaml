@@ -34,7 +34,7 @@ services:
     postgres:
         image: postgres:10.1
         volumes:
-          "c:/alfresco/postgresql:/var/lib/postgresql"
+          - "c:/alfresco/postgresql:/var/lib/postgresql"
         environment:
             - POSTGRES_PASSWORD=alfresco
             - POSTGRES_USER=alfresco
