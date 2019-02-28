@@ -2,17 +2,23 @@ version: "3"
 
 volumes:
     alfresco-data: 
-        driver: local
+        #driver: local
+        external: true
         # driver_opts: 
         #     type: none 
         #     device: c:/alfresco/alfresco-data
         #     o: bind
     postgresql-data:
-        driver: local
+        #driver: local
+        external: true
         # driver_opts: 
         #     type: none 
         #     device: c:/alfresco/postgresql-data
         #     o: bind
+    solr-data:
+        #driver: local
+        external: true
+        
 
 services:
 
@@ -60,6 +66,8 @@ services:
 
     solr6:
         image: alfresco/alfresco-search-services:1.1.1
+        volumes:
+            - "solr-data:/opt/alfresco-search-services/data"
         environment:
             #Solr needs to know how to register itself with Alfresco
             - SOLR_ALFRESCO_HOST=alfresco
