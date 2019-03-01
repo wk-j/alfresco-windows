@@ -24,7 +24,8 @@ docker volume inspect solr-data
 ## Exec
 
 ```
-docker exec -it alfrescowindows_alfresco_1 bash
+docker exec -it alfrescowindows_alfresco_1 bas
+
 docker exec -it alfrescowindows_postgres_1 bash
 docker exec -it alfrescowindows_solr6_1 bash
 ```

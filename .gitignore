@@ -17,5 +17,8 @@ publish
 .working
 .publish
 
+temp
+logs
+
 target
 BenchmarkDotNet.Artifacts
