@@ -26,6 +26,7 @@ services:
         image: alfresco/alfresco-content-repository-community:6.1.0-ea
         volumes:
           - "alfresco-data:/usr/local/tomcat/alf_data"
+          - "./config/alfresco-global.properties:/usr/local/tomcat/share/classes/alfresco-global.properties"
         environment:
             JAVA_OPTS : "
                 -Ddb.driver=org.postgresql.Driver
